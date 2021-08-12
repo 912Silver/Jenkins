@@ -2,6 +2,13 @@ pipeline {
     agent any
 
     stages {
+        
+        stage ('Checkout Java Code'){
+            steps{
+                git branch: 'main', credentialsId: 'GITHUB-CREDS', url: 'https://github.com/kul-samples/java_sample_webapp.git'
+            }
+        }
+        
         stage('Hello') {
             steps {
                 echo 'Hello World'
