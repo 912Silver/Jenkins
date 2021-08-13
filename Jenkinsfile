@@ -32,7 +32,7 @@ pipeline {
         stage('create docker image') {
             steps {
                  sh '''docker image ls 
-                    docker image build .  -f Dockerfile -t kulbhushanmayer/devops:latest
+                    docker image build .  -f Dockerfile -t devops:latest
                     docker image ls'''
              }
         }
