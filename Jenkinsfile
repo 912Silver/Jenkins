@@ -36,6 +36,12 @@ pipeline {
                     docker image ls'''
              }
         }
+        stage('push docker image') {
+            steps {
+                 sh '''docker login -u ${dockeruser} -p ${dockerpassword}
+                    docker push devops:latest'''
+             }
+        }
         stage('Hello') {
             steps {
                 echo 'Hello World'
