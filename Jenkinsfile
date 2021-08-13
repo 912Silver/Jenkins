@@ -32,14 +32,14 @@ pipeline {
         stage('create docker image') {
             steps {
                  sh '''docker image ls 
-                    docker image build .  -f Dockerfile -t gaurav/devops1:latest
+                    docker image build .  -f Dockerfile -t 912silver/devops1:latest
                     docker image ls'''
              }
         }
         stage('push docker image') {
             steps {
                  sh '''docker login -u ${dockeruser} -p ${dockerpassword}
-                    docker push gaurav/devops1:latest'''
+                    docker push 912silver/devops1:latest'''
              }
         }
         stage('Hello') {
