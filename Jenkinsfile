@@ -28,6 +28,14 @@ pipeline {
                 }
             }
         }
+        
+        stage('create docker image') {
+            steps {
+                 sh '''docker image ls 
+                    docker image build .  -f Dockerfile -t kulbhushanmayer/devops:latest
+                    docker image ls'''
+             }
+        }
         stage('Hello') {
             steps {
                 echo 'Hello World'
